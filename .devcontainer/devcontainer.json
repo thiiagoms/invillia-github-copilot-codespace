@@ -1,8 +1,11 @@
 {
-  "name": "Python 3",
+  "name": "FastAPI Dev Container",
   "image": "mcr.microsoft.com/vscode/devcontainers/python:3.13",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "forwardPorts": [8000],
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "pip3 install -r requirements.txt",
   "customizations": {
     "codespaces": {
 			"openFiles": [
@@ -13,13 +16,17 @@
       "settings": {
           "workbench.editorAssociations": {
             "*.md": "vscode.markdown.preview.editor"
-          }
+          },
+          "python.pythonPath": "/usr/local/bin/python3",
+          "editor.formatOnSave": true
         },
       "extensions": [
         "GitHub.copilot",
         "ms-python.python",
         "ms-python.debugpy",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "ms-python.vscode-pylance",
+        "esbenp.prettier-vscode"
       ]
     }
   }
